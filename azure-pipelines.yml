@@ -1,0 +1,28 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+# https://dev.azure.com/grahamnorth/hooktest/_library?itemType=VariableGroups&view=VariableGroupView&variableGroupId=2&path=pipeline-secrets
+- group: pipeline-secrets-module
+
+- name: "CONTAINER"
+  value: "hashicorp/terraform"
+
+- name: "ENTRYPOINT"
+  value: "test.sh"
+
+- name: "HOSTMOUNT"
+  value: "/host"
+
+- name: "HOSTSHARE"
+  value: "/share"
+
+- name: "CIFSUSERNAME"
+  value: "peith7teashoo7ab"
+
+- name: "ADMIN_USERNAME"
+  value: "vmadmin"
+
+steps:
+- script: date
+- script: sudo -E ./pipeline.sh
