@@ -5,6 +5,7 @@ variable "vhubmaps" {
     hub_location            = string
     hub_ipaddress           = string
     virtual_wan_name        = string
+    vpn_gw_name             = string
   }))
 }
 
